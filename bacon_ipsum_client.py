@@ -1,12 +1,17 @@
 from requests import Session
-import sys
+
 
 class BaconIpsumClient:
+    '''
+        The Bacon Ipsum JSON API is a REST interface for generating meaty lorem ipsum text 
+        and can be used by any application.
+    '''
+
     def __init__(self):
         self.base_url = "https://baconipsum.com/api/"
         self._session = Session()
 
-    def get_bacon(self, params: dict):
+    def get_bacon(self, params={"type":"all-meat"}):
         '''
             Parameters:
 
@@ -25,16 +30,7 @@ class BaconIpsumClient:
         try:
             return response.json()
         except:
-            return {"error": "Invalid params"}
-
-    @classmethod
-    def help(self):
-        '''
-            The Bacon Ipsum JSON API is a REST interface for generating meaty lorem ipsum text 
-            and can be used by any application. Pass in the following parameters using 
-            an HTTPS GET and we’ll return a JSON string array of paragraphs.
-        '''
-        print(self.help.__doc__)
+            return {"error": "Invalid Parameters."}
 
 
 if __name__ == "__main__":
