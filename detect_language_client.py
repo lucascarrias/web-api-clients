@@ -26,3 +26,5 @@ class DetectLanguageClient:
 
 if __name__ == "__main__":
     dl_client = DetectLanguageClient(os.getenv("TOKEN"))
+
+    dl_client.detect_language("Hello+world", "Bom+dia")

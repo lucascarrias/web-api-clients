@@ -35,3 +35,11 @@ class BaconIpsumClient:
 
 if __name__ == "__main__":
     bacon_client = BaconIpsumClient()
+
+    bacon_response = bacon_client.get_bacon(params={
+        "type":"all-meat",
+        "paras":1,
+        "start-with-lorem":1
+        })
+
+    print(bacon_response)

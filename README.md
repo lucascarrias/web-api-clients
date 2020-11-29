@@ -47,7 +47,17 @@ def get_bacon(self, params={'type': 'all-meat'}):
 ```python
 bacon_client = BaconIpsumClient()
 
-bacon_client.get_bacon()
+    bacon_response = bacon_client.get_bacon(params={
+        "type":"all-meat",
+        "paras":1,
+        "start-with-lorem":1
+        })
+
+    print(bacon_response)
+    ['Bacon ipsum dolor amet tri-tip short ribs cupim, 
+    bresaola picanha shank bacon porchetta pork loin short loin shoulder andouille biltong beef ribs. 
+    Porchetta meatball biltong meatloaf, fatback ham hock beef pork chop pig picanha.']
+
 ```
 ---
 ## Detect Language Client :speech_balloon:
@@ -85,8 +95,38 @@ def detect_language(self, *content):
 ```
 #### Exemplo de uso
 ```python
-dl_client = DetectLanguageClient()
+dl_client = DetectLanguageClient("<TOKEN>")
 
-dl_client.detect_language("Hello+world", "Olá+mundo")
+dl_client.detect_language("Hello+world", "Bom+dia")
+{
+  "data": {
+    "detections": [
+      [
+        {
+          "language": "en",
+          "isReliable": true,
+          "confidence": 11.94
+        }
+      ],
+      [
+        {
+          "language": "pt",
+          "isReliable": true,
+          "confidence": 2.625
+        },
+        {
+          "language": "sv",
+          "isReliable": false,
+          "confidence": 2.625
+        },
+        {
+          "language": "nl",
+          "isReliable": false,
+          "confidence": 2.625
+        }
+      ]
+    ]
+  }
+}
 ```
 ---
