@@ -2,6 +2,7 @@
 
 Scripts de demonstração de uso de APIs
 
+[Bacon Ipsum](https://github.com/LucasCarrias/web-api-clients#bacon-ipsum-client-bacon) | [Detect Language](https://github.com/LucasCarrias/web-api-clients#detect-language-client-speech_balloon) | [Http Cats](https://github.com/LucasCarrias/web-api-clients#http-cats-cat)
 ----
 ### Requisitos
 Você precisa do Python 3.8 :snake: ou superior instalado para executar os scripts
