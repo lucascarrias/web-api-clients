@@ -47,16 +47,16 @@ def get_bacon(self, params={'type': 'all-meat'}):
 ```python
 bacon_client = BaconIpsumClient()
 
-    bacon_response = bacon_client.get_bacon(params={
-        "type":"all-meat",
-        "paras":1,
-        "start-with-lorem":1
-        })
+bacon_response = bacon_client.get_bacon(params={
+    "type":"all-meat",
+    "paras":1,
+    "start-with-lorem":1
+    })
 
-    print(bacon_response)
-    ['Bacon ipsum dolor amet tri-tip short ribs cupim, 
-    bresaola picanha shank bacon porchetta pork loin short loin shoulder andouille biltong beef ribs. 
-    Porchetta meatball biltong meatloaf, fatback ham hock beef pork chop pig picanha.']
+print(bacon_response)
+['Bacon ipsum dolor amet tri-tip short ribs cupim, 
+bresaola picanha shank bacon porchetta pork loin short loin shoulder andouille biltong beef ribs. 
+Porchetta meatball biltong meatloaf, fatback ham hock beef pork chop pig picanha.']
 
 ```
 ---
@@ -130,3 +130,31 @@ dl_client.detect_language("Hello+world", "Bom+dia")
 }
 ```
 ---
+## Http Cats :cat:
+[Site](https://http.cat/) |
+Um gato para cada status
+![cat_status](https://http.cat/418.jpg)
+
+Rotas | Método | Parametros | Autênticação :key:| Descrição
+|:---:|:---:|:---:|:---:|---|
+| "https://http.cat/" | **GET** | :x: | :x:| Gatos
+
+#### Script
+[http_cats_client.py](https://github.com/LucasCarrias/web-api-clients/blob/master/http_cats_client.py)
+
+#### Métodos:
+```python
+# Gera imagem de status
+def status(self, code):
+    ...
+
+# Gera a imagem a partir de url
+def status_from_url(self, url: str):
+   ...
+```
+#### Exemplo de uso
+```python
+http_cat = HttpCatsClient()
+
+print(http_cat.status(451))
+```
